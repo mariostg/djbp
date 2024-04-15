@@ -1,4 +1,6 @@
-# Setup environment
+# My django boilerplate
+
+## Setup environment
 ```bash
   python -m venv .venv
   source .venv.bin/activate
@@ -8,18 +10,18 @@
   pip-sync --ask
   source .venv/bin/activate
 ```
-# Setup project
+## Setup project
 ```bash
 django-admin startproject main .
 ```
 
-## Setup manage.py
+### Setup manage.py
 ```bash
 diff manage.py _manage.py
 #If all ok, do the merge
 diff --line-format %L manage.py _manage.py >manage.py
 ```
 
-## upgrading python, django
+### upgrading python, django
   check pyupgrade args: [--py312-plus]
   django-upgrade  args: [--target-version, "5.0.4"]
