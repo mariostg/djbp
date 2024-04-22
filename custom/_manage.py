@@ -28,6 +28,8 @@ def main():
     )
     execute_from_command_line(sys.argv)
 
+    if not Path.exists(".envx"):
+        raise FileExistsError(".env file not found.  Use .env-exemple as a starting point.")
 
 if __name__ == "__main__":
     main()
