@@ -22,7 +22,6 @@ repos:
     -   id: check-docstring-first
     -   id: check-executables-have-shebangs
     -   id: check-toml
-    -   id: detect-private-key
     -   id: requirements-txt-fixer
     # -   id: check-case-conflict
     #-   id: name-tests-test
@@ -42,7 +41,7 @@ repos:
     rev: 3.0.6
     hooks:
     -   id: djcss
-    -   id: djcss
+    -   id: djjs
     -   id: djhtml
         args:
         -   --tabwidth=2
