@@ -36,6 +36,10 @@
 - Running pip-compile will generate **requirements.txt** file. If a file already exists, consider backing up file first and run diff to compare both versions after having executed pip-compile.
 - Create a .env file. Use .env-exemple to get started.
 - Apply migrate
+- Set up gunicorn socket
+- Set up gunicofn service
+- Set up Nginx
+- Set Allowed host in settings.py
 
 ### Sequence of commands
 
