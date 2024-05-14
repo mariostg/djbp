@@ -13,3 +13,5 @@ __pycache__
 htmlcov/
 
 requirements.txt
+
+staticfiles/
