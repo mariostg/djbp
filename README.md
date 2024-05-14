@@ -36,8 +36,8 @@
 - Running pip-compile will generate **requirements.txt** file. If a file already exists, consider backing up file first and run diff to compare both versions after having executed pip-compile.
 - Create a .env file. Use .env-exemple to get started.
 - Apply migrate
-- Set up gunicorn socket
-- Set up gunicofn service
+- [Set up gunicorn socket](#gunicorn-socket)
+- [Set up gunicorn service](#gunicorn-service)
 - Set up Nginx
 
 ### Sequence of commands
@@ -73,3 +73,72 @@ diff --line-format %L manage.py custom/_manage.py >manage.py
 
 check pyupgrade args: [--py312-plus]
 django-upgrade args: [--target-version, "5.0.4"]
+
+## Sample Gunicorn service file <a id="gunicorn-service"></a>
+
+This files under Debian at least goes in /etc/systemd/system/
+I like to call this file djbp.service. Replace djbp with whatever project name is chosen.
+Set ExecStart directory as appropriate.
+
+```bash
+[Unit]
+Description=gunicorn daemon djbp
+Requires=djbp.socket
+After=network.target
+
+[Service]
+User=mariost-gelais
+Group=www-data
+WorkingDirectory=/home/mariost-gelais/sites/djbp/
+ExecStart=/home/mariost-gelais/sites/djbp/.venv-djbp/bin/gunicorn \
+          --access-logfile - \
+          --workers 3 \
+          --bind unix:/run/djbp.sock \
+          main.wsgi:application #Note main module
+
+[Install]
+WantedBy=multi-user.target
+```
+
+## Sample Gunicorn socket file <a id='gunicorn-socket'></a>
+
+This files under Debian at least goes in /etc/systemd/system/
+I like to call this file djbp.socket. Replace djbp with whatever project name is chosen.
+
+```bash
+[Unit]
+Description=gunicorn socket djbp
+
+[Socket]
+ListenStream=/run/djbp.sock
+
+[Install]
+WantedBy=sockets.target
+```
+
+## Sample Nginx config file <a id='nginx-conf'></a>
+
+```
+server {
+    listen 7777;
+    root /home/username/sites/djbp;
+    index index.html;
+    server_name 10.0.0.23;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+
+    location /staticfiles/ {
+        autoindex on;
+        alias /home/username/sites/djbp/staticfiles/;
+    }
+    location /media/ {
+        autoindex on;
+        alias /home/username/djbp/sites/media/;
+    }
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/run/djbp.sock;
+    }
+}
+```
