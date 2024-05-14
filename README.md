@@ -39,7 +39,6 @@
 - Set up gunicorn socket
 - Set up gunicofn service
 - Set up Nginx
-- Set Allowed host in settings.py
 
 ### Sequence of commands
 
