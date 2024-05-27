@@ -52,7 +52,7 @@
   rm requirements.txt.bak #if all is good.
   pip-sync --ask
   cp .env-exemple .env #Edit as needed
-  pythmon manage.py migrate
+  python manage.py migrate
 ```
 
 ## Setup project
