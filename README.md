@@ -43,8 +43,8 @@
 ### Sequence of commands
 
 ```bash
-  python -m venv .venv
-  source .venv/bin/activate
+  python -m venv .venv-djbp
+  source .venv-djbp/bin/activate
   python -m pip install pip-tools
   cp requirements.txt requirements.txt.bak
   pip-compile
