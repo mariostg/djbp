@@ -66,16 +66,13 @@ Additionally, skip the command **django-admin startapp**. App project has been c
 
 ### Setup manage.py
 
+Just in case I need to modify my manage.py.  manage.py on this project has been modified.
+
 ```bash
 diff manage.py _manage.py
 #If all ok, do the merge
 diff --line-format %L manage.py custom/_manage.py >manage.py
 ```
-
-### upgrading python, django
-
-check pyupgrade args: [--py312-plus]
-django-upgrade args: [--target-version, "5.0.4"]
 
 ## Sample Gunicorn service file <a id="gunicorn-service"></a>
 
