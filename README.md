@@ -43,6 +43,7 @@
 ### Sequence of commands
 
 ```bash
+  bft git clone https://github.com/mariostg/djbp.git
   python -m venv .venv-djbp
   source .venv-djbp/bin/activate
   python -m pip install pip-tools
@@ -53,6 +54,8 @@
   pip-sync --ask
   cp .env-exemple .env #Edit as needed
   python manage.py migrate
+  python manage.py createsuperuser
+  python manage.py runserver
 ```
 
 ## Setup project
