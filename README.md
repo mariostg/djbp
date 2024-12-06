@@ -43,7 +43,8 @@
 ### Sequence of commands
 
 ```bash
-  bft git clone https://github.com/mariostg/djbp.git
+  git clone https://github.com/mariostg/djbp.git
+  cd djbp
   python -m venv .venv-djbp
   source .venv-djbp/bin/activate
   python -m pip install pip-tools
