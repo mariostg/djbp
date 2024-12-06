@@ -48,7 +48,7 @@
   python -m venv .venv-djbp
   source .venv-djbp/bin/activate
   python -m pip install pip-tools
-  cp requirements.txt requirements.txt.bak
+  cp requirements.txt requirements.txt.bak #AS necessary
   pip-compile
   diff requirements.txt requirements.txt.bak #(Not required when seeting-up for first time)
   rm requirements.txt.bak #if all is good.
