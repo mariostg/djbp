@@ -1,8 +1,8 @@
-from django.shortcuts import render
-from project import models
-from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from django.shortcuts import redirect
+from django.contrib.auth import authenticate, login, logout
+from django.shortcuts import redirect, render
+
+from project import models
 
 
 def index(request):

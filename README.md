@@ -4,7 +4,7 @@
 
 - django upgrade https://github.com/adamchainz/django-upgrade
   upgrades Django code to the latest features
-- pre-commit hooks,pre-commit will be run on each commit, or run pre-commit run --all-files 
+- pre-commit hooks,pre-commit will be run on each commit, or run pre-commit run --all-files
   - trailing-whitespace
   - end-of-file-fixer
   - check-yaml
