@@ -1,4 +1,5 @@
 import pytest
+
 from project.models import ProjectUser
 
 

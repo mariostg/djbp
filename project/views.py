@@ -1,8 +1,8 @@
-from django.shortcuts import render
-from project import models
-from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from django.shortcuts import redirect
+from django.contrib.auth import authenticate, login, logout
+from django.shortcuts import redirect, render
+
+from project import models
 
 
 def index(request):
@@ -13,9 +13,9 @@ def index(request):
         request (HttpRequest): The HTTP request object sent by the client.
 
     Returns:
-        HttpResponse: Renders and returns the 'project/index.html' template.
+        HttpResponse: Renders and returns the 'index.html' template.
     """
-    return render(request, "project/index.html")
+    return render(request, "index.html")
 
 
 def user_login(request):
@@ -58,7 +58,7 @@ def user_login(request):
         else:
             messages.error(request, "Username OR password is incorrect")
 
-    return render(request, "project/login.html")
+    return render(request, "login.html")
 
 
 def user_logout(request):
@@ -88,4 +88,4 @@ def siteadmin(request):
     Returns:
         HttpResponse: Rendered admin.html template response.
     """
-    return render(request, "project/admin.html")
+    return render(request, "admin.html")

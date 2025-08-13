@@ -1,9 +1,10 @@
 import pytest
+from django.contrib.messages import get_messages
 from django.test import Client
 from django.urls import reverse
-from django.contrib.messages import get_messages
-from project.models import ProjectUser
 from pytest_django import asserts
+
+from project.models import ProjectUser
 
 
 @pytest.mark.django_db
