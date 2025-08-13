@@ -1,0 +1,29 @@
+@import "_reset.scss";
+@import "_variables.scss";
+@import "_mixins.scss";
+@import "_form.scss";
+
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  background-color: light-dark($light-background, $dark-background);
+  color: light-dark($light-text, $dark-text);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: sans-serif;
+  line-height: 1.5rem;
+}
+a {
+  color: $light;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 12px;
+}

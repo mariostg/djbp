@@ -1,0 +1,18 @@
+/*blue theme*/
+/*greening theme*/
+/*colors*/
+/*Colors of elements*/
+.form-login {
+  display: flex;
+  flex-direction: column;
+  max-width: 330px;
+  padding: 1rem;
+  border-radius: 0;
+  background-color: #9495a5;
+  color: #092834;
+  text-align: center;
+}
+
+.btn-login {
+  background-color: #67afcb;
+}

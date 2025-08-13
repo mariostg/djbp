@@ -1,3 +1,361 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
 body {
-  color: blue;
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/*blue theme*/
+/*greening theme*/
+/*colors*/
+/*Colors of elements*/
+/*blue theme*/
+/*greening theme*/
+/*colors*/
+/*Colors of elements*/
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  border-radius: 0;
+  background-color: #9495a5;
+  border: 1px solid light-dark(#092834, #092834);
+  border-top: none;
+  max-width: 960px;
+}
+.form section {
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+}
+.form__header {
+  border-top: 1px solid light-dark(#092834, #092834);
+  border-bottom: 1px solid light-dark(#092834, #092834);
+  border-radius: 0;
+  background-color: #347b98;
+  color: #67afcb;
+  text-align: center;
+  padding: 0 2rem;
+}
+.form__fields {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  align-items: center;
+  gap: 14px;
+  padding: 1rem;
+}
+.form__field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.form__field-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 0.2rem 1rem;
+}
+@media screen and (max-width: 991px) {
+  .form__field-row {
+    flex-direction: column;
+  }
+}
+.form__field-checkbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5px;
+  padding: 0.2rem 0;
+  min-width: 120px;
+}
+@media screen and (max-width: 480px) {
+  .form__field-checkbox {
+    flex-direction: column;
+  }
+}
+
+.form-select {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.form-select::after {
+  content: "";
+  width: 0.8em;
+  height: 0.5em;
+  background-color: #1a3e4c;
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+  justify-self: end;
+}
+
+.form-input,
+.form-select {
+  line-height: 1.1;
+  background-color: #e4f1f6;
+  color: #092834;
+  padding: 0.5rem;
+  border-radius: 0;
+  border: 1px solid light-dark(#092834, #092834);
+  transition: 180ms box-shadow ease-in-out;
+}
+
+.form-input:focus,
+.form-select:focus {
+  border: 1px solid light-dark(#092834, #092834);
+  box-shadow: 0 0 0 2px #347b98;
+  outline: 3px solid transparent;
+}
+
+.form-input:hover,
+.form-select:hover {
+  opacity: 0.8;
+  box-shadow: 0 3px 5px #347b98;
+  background-color: #bec6b8;
+}
+
+.form-label {
+  font-weight: 300;
+  display: block;
+  font-size: 1.2rem;
+  color: #1a3e4c;
+}
+
+input,
+textarea {
+  font-size: max(16px, 1rem);
+  font-weight: 400;
+}
+
+select {
+  appearance: none;
+  position: relative;
+  border: none;
+  margin: 0;
+  width: 100%;
+  cursor: pointer;
+  z-index: 1;
+  background-color: transparent;
+  outline: none;
+  font-size: max(16px, 1rem);
+  font-weight: 400;
+}
+
+select,
+.form-select:after {
+  grid-area: select;
+}
+
+textarea {
+  grid-column: 1/-1;
+  resize: vertical;
+}
+
+input[type=submit] {
+  height: 48px;
+}
+
+input[type=checkbox] {
+  display: grid;
+  place-content: center;
+  appearance: none;
+  background-color: #e4f1f6;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.7em;
+  height: 1.7em;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+}
+
+input[type=checkbox]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em red;
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+input[type=checkbox]:checked::before {
+  transform: scale(1.4);
+}
+
+input[type=checkbox] :focus {
+  outline: max(2px, 0.15em) solid currentColor;
+  outline-offset: max(2px, 0.15em);
+}
+
+input[type=checkbox]:disabled {
+  color: #1a3e4c;
+  cursor: not-allowed;
+}
+
+.checkbox--disabled {
+  color: #1a3e4c;
+  cursor: not-allowed;
+}
+
+.btn {
+  font-family: inherit;
+  font-size: 1.5rem;
+  background-color: #67afcb;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: light-dark(#092834, #e4f1f6);
+  border-radius: 0;
+  box-shadow: 0 3px 5px rgba(75, 85, 68, 0.8);
+  padding: 0.5em 1em;
+  min-width: 15ch;
+  min-height: 24px;
+  transition: 220ms all ease-in-out;
+  line-height: 1.1rem;
+  text-decoration: none;
+  margin: 0.5rem;
+}
+.btn:hover {
+  cursor: pointer;
+}
+.btn:hover,
+.btn :active {
+  opacity: 0.6;
+  color: #618264;
+}
+.btn:focus {
+  outline-style: solid;
+  outline-color: transparent;
+}
+.btn-row {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  gap: 1rem;
+}
+.btn-add {
+  background: url(../images/icon-btn-add.svg) 5px 1px no-repeat;
+  background-color: #404040;
+  background-size: 2rem;
+  padding-bottom: 0.1rem;
+  padding-right: 1rem;
+  min-width: fit-content;
+}
+.btn-edit {
+  background: url(../images/icon-btn-edit.svg) 5px 1px no-repeat;
+  background-color: #404040;
+  background-size: 2rem;
+  padding-bottom: 0.1rem;
+  padding-right: 1rem;
+  min-width: fit-content;
+}
+.btn-delete {
+  background: url(../images/icon-btn-delete.svg) 5px 1px no-repeat;
+  background-size: 2rem;
+  min-width: fit-content;
+  background-color: #404040;
+  padding-bottom: 0.1rem;
+  padding-right: 1rem;
+}
+.btn-back {
+  background-color: #404040;
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  background-color: light-dark(#e4f1f6, #092834);
+  color: light-dark(#092834, #e4f1f6);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: sans-serif;
+  line-height: 1.5rem;
+}
+
+a {
+  color: #67afcb;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 12px;
 }

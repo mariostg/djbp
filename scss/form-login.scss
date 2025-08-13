@@ -1,0 +1,15 @@
+@import "_variables";
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+  max-width: 330px;
+  padding: 1rem;
+  border-radius: $border-radius;
+  background-color: $form;
+  color: $darkest;
+  text-align: center;
+}
+.btn-login {
+  background-color: $submit;
+}

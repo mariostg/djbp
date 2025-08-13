@@ -1,6 +1,6 @@
 <nav>
     {% if request.path != '/' %}
-      <a class='btn' href="{% url 'index' %}">lHome</a>
+      <a class='btn' href="{% url 'index' %}">Home</a>
     {% endif %}
     {% if request.user.is_authenticated %}
       <a class='btn' href="{% url 'logout' %}">Logout</a>
@@ -8,6 +8,8 @@
         <a class='btn' href="{% url 'site-admin' %}">Admin</a>
       {% endif %}
     {% else %}
-              <a class='btn' href="{% url 'login' %}">Login</a>
+    {% if request.path != '/login/' %}
+      <a class='btn' href="{% url 'login' %}">Login</a>
+      {% endif %}
     {% endif %}
   </nav>

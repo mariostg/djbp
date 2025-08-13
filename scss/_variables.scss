@@ -1,0 +1,33 @@
+/*blue theme*/
+
+$darkest: #092834;
+$dark: #1a3e4c;
+$middle: #347b98;
+$light: #67afcb;
+$lightest: #e4f1f6;
+
+/*greening theme*/
+
+// $darkest: #1b3509;
+// $dark: #3a631c;
+// $middle: #67b132;
+// $light: #9dd874;
+// $lightest: #eef8e7;
+
+/*colors*/
+
+$light-color: $lightest;
+$dark-background: $darkest;
+$light-background: $lightest;
+$dark-text: $lightest;
+$light-text: $darkest;
+
+/*Colors of elements*/
+
+$submit: $light;
+$form: #9495a5;
+$header-text: $light;
+$border: 1px solid light-dark($darkest, $darkest);
+$border-radius: 0;
+$box-shadow: 0 3px 5px rgba(75, 85, 68, 0.8);
+$hover: #618264;

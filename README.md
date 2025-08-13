@@ -1,10 +1,14 @@
 # My django boilerplate
 
+- Implements custom user model (ProjectUser) extending Django's AbstractUser.
+- Handles user authentication and login process.
+- Provide basic dark and light theme
+
 ## Features
 
 - django upgrade https://github.com/adamchainz/django-upgrade
   upgrades Django code to the latest features
-- pre-commit hooks,pre-commit will be run on each commit, or run pre-commit run --all-files 
+- pre-commit hooks,pre-commit will be run on each commit, or run pre-commit run --all-files
   - trailing-whitespace
   - end-of-file-fixer
   - check-yaml
@@ -67,7 +71,7 @@ Additionally, skip the command **django-admin startapp**. App project has been c
 
 ### Setup manage.py
 
-Just in case I need to modify my manage.py.  manage.py on this project has been modified.
+Just in case I need to modify my manage.py. manage.py on this project has been modified.
 
 ```bash
 diff manage.py _manage.py
