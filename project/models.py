@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 
 class Base(models.Model):
@@ -19,8 +20,8 @@ class Base(models.Model):
         abstract (bool): True - indicates this is an abstract base class that will not be created as a table.
     """
 
-    created = models.DateTimeField(auto_now_add=True)
-    modified = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(_("date created"), auto_now_add=True)
+    modified = models.DateTimeField(_("date modified"), auto_now=True)
 
     class Meta:
         abstract = True

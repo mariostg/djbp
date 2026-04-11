@@ -13,3 +13,6 @@ __pycache__
 htmlcov/
 
 staticfiles/
+requirements.txt
+
+*.mo

@@ -1,4 +1,5 @@
 {% extends 'core/base.html' %}
+{% load i18n %}
 {% load static %}
 {% block extracss %}
   <link rel="stylesheet" href={% static "css/form-login.css"%} /> {% endblock extracss %}
@@ -6,19 +7,19 @@
 
   <div class="form-login">
     <div class="">
-      <h2>My Django Project</h2>
-      <h4>Administration</h4>
+      <h2>{% trans "My Django Project" %}</h2>
+      <h4>{% trans "Administration" %}</h4>
     </div>
 
     <form action="#" method="POST">
       {% csrf_token %}
       <div class="form__field">
-        <label class='form-label' for="username">Username</label>
+        <label class='form-label' for="username">{% trans "Username" %}</label>
         <input class="form-input" type="text" name="username" autofocus="autofocus" />
       </div>
 
       <div class="form__field">
-        <label class='form-label' for="password">Password</label>
+        <label class='form-label' for="password">{% trans "Password" %}</label>
         <input
           class="form-input"
           id="formInput#password"
@@ -30,10 +31,10 @@
 
       <div class="form__field-checkbox">
         <input class="form-input" type="checkbox" onclick="togglePassword()" />
-        <label class="form-label" id="show_password"> Montrer le mot de passe </label>
+        <label class="form-label" id="show_password"> {% trans "Show password" %} </label>
       </div>
 
-      <input class="btn btn-login" type="submit" value="Log In" />
+      <input class="btn btn-login" type="submit" value="{% trans "Log In" %}" />
     </form>
 
 

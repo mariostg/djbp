@@ -1,6 +1,7 @@
 {% extends 'core/base.html' %}
+{% load i18n %}
 {% load static %}
     {% block content %}
-    <h1>Welcome</h1>
-    <p>djbp has been successfully installed</p>
+    <h1>{% trans "Welcome" %}</h1>
+    <p>{% trans "djbp has been successfully installed" %}</p>
     {% endblock content %}

@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,7 +7,7 @@
     {% block extracss %}{% endblock extracss %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Django Project</title>
+    <title>{% trans "My Django Project" %}</title>
   </head>
   <body>
 
@@ -33,10 +34,10 @@
   <footer>
     <div>
       <button id="lightSwitch" type="button" onclick="switchLight()">
-        Light
+        {% trans "Light" %}
       </button>
-      <button id="darkSwitch" type="button" onclick="switchDark()">Dark</button>
-      <button id="autoSwitch" type="button" onclick="switchAuto()">Auto</button>
+      <button id="darkSwitch" type="button" onclick="switchDark()">{% trans "Dark" %}</button>
+      <button id="autoSwitch" type="button" onclick="switchAuto()">{% trans "Auto" %}</button>
     </div>
   </footer>
 </html>

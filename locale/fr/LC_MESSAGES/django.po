@@ -1,0 +1,95 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-29 20:06-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: main/settings.py:125
+msgid "English"
+msgstr ""
+
+#: main/settings.py:126
+msgid "French"
+msgstr ""
+
+#: project/models.py:23
+msgid "date created"
+msgstr ""
+
+#: project/models.py:24
+msgid "date modified"
+msgstr ""
+
+#: templates/project/core/base.html:10 templates/project/login.html:10
+msgid "My Django Project"
+msgstr ""
+
+#: templates/project/core/base.html:37
+msgid "Light"
+msgstr "Clair"
+
+#: templates/project/core/base.html:39
+msgid "Dark"
+msgstr ""
+
+#: templates/project/core/base.html:40
+msgid "Auto"
+msgstr ""
+
+#: templates/project/core/nav.html:5
+msgid "Home"
+msgstr ""
+
+#: templates/project/core/nav.html:8
+msgid "Logout"
+msgstr ""
+
+#: templates/project/core/nav.html:10
+msgid "Admin"
+msgstr ""
+
+#: templates/project/core/nav.html:14
+msgid "Login"
+msgstr ""
+
+#: templates/project/index.html:5
+msgid "Welcome"
+msgstr ""
+
+#: templates/project/index.html:6
+msgid "djbp has been successfully installed"
+msgstr "Django installé avec succès"
+
+#: templates/project/login.html:11
+msgid "Administration"
+msgstr ""
+
+#: templates/project/login.html:17
+msgid "Username"
+msgstr ""
+
+#: templates/project/login.html:22
+msgid "Password"
+msgstr ""
+
+#: templates/project/login.html:34
+msgid "Show password"
+msgstr "Montrer le mot de passe"
+
+#: templates/project/login.html:37
+msgid "Log In"
+msgstr "Se connecter"
