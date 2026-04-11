@@ -1,5 +1,5 @@
 .venv-djbp/
-/.env
+.env
 
 db.sqlite3
 
